@@ -23,4 +23,6 @@ CDS is the new flag that should be enabled, to squeeze off a few more millisecon
 It's already available in the Paketo Java Buildpack
 (Friends don't let friends use Dockerfile)
 
+---
+
 ### Quick startup time demo

@@ -1,7 +1,5 @@
 ### Thanks!
 <br>
 
-### DaShaun Carter
-### https://dashaun.com
-
-#### Q&A
+### https://github.com/xyloman
+### https://github.com/dashaun
