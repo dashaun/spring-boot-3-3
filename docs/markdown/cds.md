@@ -27,6 +27,12 @@ It's already available in the Paketo Java Buildpack
 
 ### Quick startup time demo
 
+References:
+- [Document Buildpacks CDS and Spring AOT support #40762](https://github.com/spring-projects/spring-boot/issues/40762)
+- [Training run configuration](https://github.com/spring-projects/spring-lifecycle-smoke-tests/blob/main/README.adoc#training-run-configuration)
+- [DRAFT Class Data Sharing How To](https://docs.spring.io/spring-boot/3.3-SNAPSHOT/how-to/class-data-sharing.html)
+
+
 Create an empty directory:
 
 ```bash
