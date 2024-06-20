@@ -27,20 +27,24 @@ It's already available in the Paketo Java Buildpack
 
 ### Quick startup time demo
 
-References:
+References
 - [Document Buildpacks CDS and Spring AOT support #40762](https://github.com/spring-projects/spring-boot/issues/40762)
 - [Training run configuration](https://github.com/spring-projects/spring-lifecycle-smoke-tests/blob/main/README.adoc#training-run-configuration)
 - [DRAFT Class Data Sharing How To](https://docs.spring.io/spring-boot/3.3-SNAPSHOT/how-to/class-data-sharing.html)
 
 
-Create an empty directory:
+---
+
+Create an empty directory
 
 ```bash
 mkdir -p demos/cds
 cd demos/cds
 ```
 
-In an empty directory download the starter:
+---
+
+In an empty directory download the starter
 
 ```bash
 curl -G https://start.spring.io/starter.tgz \
@@ -49,6 +53,7 @@ curl -G https://start.spring.io/starter.tgz \
   -d javaVersion=21 | tar -xzvf -
 ```
 
+---
 
 Edit [build.gradle](../../demos/cds/build.gradle) to customize the `bootBuildImage` task:
 
@@ -59,19 +64,25 @@ tasks.named('bootBuildImage') {
 }
 ```
 
-Build the Image:
+---
+
+Build the Image
 
 ```bash
 ./gradlew bootImage
 ```
 
-Run the image:
+---
+
+Run the image
 
 ```bash
 docker run -p 8080:8080 docker.io/library/demo:0.0.1-SNAPSHOT
 ```
 
-Notice the inclusion of `Spring CDS Enabled` log line which will add the flag `-XX:SharedArchiveFile=application.jsa` to the `JAVA_TOOL_OPTIONS`:
+---
+
+Notice the inclusion of `Spring CDS Enabled` log line which will add the flag `-XX:SharedArchiveFile=application.jsa` to the `JAVA_TOOL_OPTIONS`
 
 ```logs
 Spring CDS Enabled, contributing -XX:SharedArchiveFile=application.jsa to JAVA_TOOL_OPTIONS

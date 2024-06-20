@@ -23,16 +23,18 @@ Discovering applications that have exposed SBOM endpoints can allow the operatio
 - [Blog Post](https://spring.io/blog/2024/05/24/sbom-support-in-spring-boot-3-3)
 - [osv.dev cli](https://github.com/google/osv-scanner/releases/tag/v1.7.4)
 
-After following the blog above a user could perform a Gradle build.
+---
 
-Create an empty directory:
+Create an empty directory
 
 ```bash
 mkdir -p demos/sbom-actuator
 cd demos/sbom-actuator
 ```
 
-In an empty directory download the starter:
+---
+
+In an empty directory download the starter
 
 ```bash
 curl -G https://start.spring.io/starter.tgz \
@@ -41,7 +43,9 @@ curl -G https://start.spring.io/starter.tgz \
   -d javaVersion=21 | tar -xzvf -
 ```
 
-Edit [build.gradle](../../demos/sbom-actuator/build.gradle) to add the CycloneDX gradle plugin:
+---
+
+Edit [build.gradle](../../demos/sbom-actuator/build.gradle) to add the CycloneDX gradle plugin
 
 ```groovy
 plugins {
@@ -49,11 +53,15 @@ plugins {
 }
 ```
 
-Edit the [application.properties](../../demos/sbom-actuator/src/main/resources/application.properties):
+---
+
+Edit the [application.properties](../../demos/sbom-actuator/src/main/resources/application.properties)
 
 ```properties
-management.endpoints.web.exposure.include=health,sbom
+management.endpoints.web.exposure.include=health,sbom,info
 ```
+
+---
 
 Perform the gradle build
 
@@ -62,11 +70,15 @@ sdk use java 21.0.3-ms
 ./gradlew build
 ```
 
+---
+
 Start the Spring Boot app
 
 ```bash
 java -jar build/libs/demo-0.0.1-SNAPSHOT.jar
 ```
+
+---
 
 Discover available SBOMs via the actuator endpoint http://localhost:8080/actuator/sbom
 
@@ -74,7 +86,9 @@ Discover available SBOMs via the actuator endpoint http://localhost:8080/actuato
 curl -i http://localhost:8080/actuator/sbom
 ```
 
-Should return a json response with the list of SBOM ids.
+---
+
+Should return a json response with the list of SBOM ids
 
 ```json
 HTTP/1.1 200 
@@ -85,11 +99,15 @@ Date: Wed, 19 Jun 2024 16:02:05 GMT
 {"ids":["application"]}
 ```
 
+---
+
 View the SBOM via the actuator endpoint http://localhost:8080/actuator/sbom/application
 
 ```bash
 curl -i http://localhost:8080/actuator/sbom/application
 ```
+
+---
 
 Use the osv.dev cli to scan the generated SBOM for vulnerabilities.
 
