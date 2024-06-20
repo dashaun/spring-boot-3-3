@@ -69,6 +69,7 @@ tasks.named('bootBuildImage') {
 Build the Image
 
 ```bash
+sdk use java 21.0.3-ms
 ./gradlew bootImage
 ```
 

@@ -65,6 +65,7 @@ By default this will use OSS postgres image
 Run the application
 
 ```bash
+sdk use java 21.0.3-ms
 ./gradlew bootRun
 ```
 
