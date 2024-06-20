@@ -8,7 +8,7 @@
       
     },
     "ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {
-      "command1": "curl -o /usr/local/bin https://github.com/google/osv-scanner/releases/download/v1.7.4/osv-scanner_linux_amd64"
+      "command1": "curl -o /usr/local/bin/osv -L https://github.com/google/osv-scanner/releases/download/v1.7.4/osv-scanner_linux_amd64 && chmod +x /usr/local/bin/osv"
     }
   }
 }
